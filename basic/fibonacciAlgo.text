@@ -1,0 +1,8 @@
+// Using For loop
+
+1. We will create two variable with initial value 0 and 1
+2. We will apply a for loop to find n number of terms
+3. We wiil sum of two previous number to find new fibonacci number
+4. Now we will update the values of two prevous variables : 
+        =>  one variable to second variable's value and 
+        =>  another variable to new fibonacci number value
