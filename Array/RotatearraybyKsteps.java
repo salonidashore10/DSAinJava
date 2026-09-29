@@ -1,38 +1,46 @@
 import java.util.Scanner;
 
 public class RotatearraybyKsteps {
-    public static void main(String[] args) {
-        int[] arr={12,13,14,23,45,56,67};
-        int n=arr.length;
 
-        // Roatate array by k=5 steps
-        int i=0,j=n-1;
-        while (i<j) {
+    public static void Reverse(int[] arr,int n,int i,int j) {
+        while(i<j){
             arr[i]=arr[i]+arr[j];
             arr[j]=arr[i]-arr[j];
             arr[i]=arr[i]-arr[j];
             i++;
             j--;
         }
-        int l=2,m=n-1;
-        while (l<m) {
-            arr[l]=arr[l]+arr[m];
-            arr[m]=arr[l]-arr[m];
-            arr[l]=arr[l]-arr[m];
-            l++;
-            m--;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter size of array : ");
+        int n=sc.nextInt();
+        System.out.println("Enter elements of array : ");
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
         }
-        int o=0,p=1;
-        while (o<p) {
-            arr[o]=arr[o]+arr[p];
-            arr[p]=arr[o]-arr[p];
-            arr[o]=arr[o]-arr[p];
-            o++;
-            p--;
+        System.out.print("Given Array : ");
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i]+" ");
         }
+        
+        System.out.println();
+
+        // Roatate array by k steps
+
+        System.out.print("Enter 'K' ( no. of rotations you want ) : ");
+        int k=sc.nextInt();
+        k=k%n;
+
+        Reverse(arr,n, 0, n-k-1);
+        Reverse(arr,n, n-k, n-1);
+        Reverse(arr,n, 0, n-1);
+
         System.out.print("Reversed array : ");
-        for(int k=0;k<n;k++){
-            System.out.print(arr[k]+" ");
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i]+" ");
         }
     }
+    
 }
