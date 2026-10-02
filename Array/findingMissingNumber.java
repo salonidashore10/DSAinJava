@@ -18,7 +18,7 @@ public class findingMissingNumber {
         System.out.println();
 
         // find missing number in array
-        int expectedSum=n*(n+1)/2;
+        int expectedSum=n*((n+1)/2);
         System.out.println("Expected Sum : "+expectedSum);
         int arraySum=0;
         for(int i=0;i<n-1;i++){
